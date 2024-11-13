@@ -28,7 +28,8 @@ public class BookService {
 
     public List<BookCountByLanguage> getBookCountByLanguage(String language){
         Languages languageCon = Languages.fromCode(language);
-        return bookRespository.findBooksByLanguage(languageCon);
+        System.out.println(languageCon.toString());
+        return bookRespository.findBooksByLanguage(languageCon.toString());
     }
 
     private List<BookConsultDTO> convertToDTO(List<Book> books){

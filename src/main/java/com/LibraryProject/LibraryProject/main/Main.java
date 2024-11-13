@@ -76,10 +76,10 @@ public class Main {
     }
 
     private void searchBooksByLanguages() {
-        System.out.println("\nLanguage ========================= Download Counts");
         System.out.println("Enter the language: ");
         System.out.print("==> ");
-        String language = entry.nextLine();
+        String language = entry.nextLine().toLowerCase();
+        System.out.println("\nLanguage ========================= Download Counts");
         bookService.getBookCountByLanguage(language).forEach(bookCountByLanguage -> {
             System.out.println(bookCountByLanguage.getLanguage()+" ========================= "+bookCountByLanguage.getCount());
         });
